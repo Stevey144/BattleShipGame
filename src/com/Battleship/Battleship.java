@@ -1,7 +1,7 @@
 package com.Battleship;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class Battleship {
     private boolean isSunk;
@@ -62,9 +62,9 @@ public class Battleship {
 
         // Display the winner
         if (player1.getScore() > player2.getScore()) {
-            System.out.println(player1.getName() + " wins!");
+            System.out.println(player1.getName() + " wins!" + " point is = " + player1.getScore());
         } else if (player1.getScore() < player2.getScore()) {
-            System.out.println(player2.getName() + " wins!");
+            System.out.println(player2.getName() + " wins!" + " point is = " + player2.getScore());
         } else {
             System.out.println("It's a draw!");
         }

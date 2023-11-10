@@ -50,6 +50,7 @@ public class Board {
 
             int row, col;
             do {
+            	
                 row = random.nextInt(rows);
                 col = random.nextInt(cols);
             } while (!isValidPlacement(row, col, size, isVertical));
@@ -96,7 +97,7 @@ public class Board {
 
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder("  ");
+        StringBuilder result = new StringBuilder(" ");
         for (int i = 0; i < cols; i++) {
             result.append(String.format("%3d", i));
         }

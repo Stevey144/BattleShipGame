@@ -35,10 +35,40 @@ public class Player{
         System.out.println(board.toString());
 
         // Take user input for the guess
-        System.out.print("Enter your guess (row col): ");
-        int guessRow = scanner.nextInt();
-        int guessCol = scanner.nextInt();
-
+        int guessRow=0;
+        int guessCol=0; 
+        
+        while (true) {
+        
+        System.out.print("Enter your guess (row): ");
+        
+        if (scanner.hasNextInt()) {
+        	 guessRow = scanner.nextInt();  // Read the first integer
+        	 break; 
+        }
+        else {
+            System.out.println("Invalid input. Please enter an integer.");
+            scanner.next(); // Consume the invalid input to prevent an infinite loop
+            
+        }
+        
+        }
+       
+        while (true) {
+            System.out.print("Enter your guess (col): ");
+            // Try to read an integer from the user            
+            if (scanner.hasNextInt()) {
+            	 guessCol = scanner.nextInt(); // Read the second integer         
+                // Your code to work with these integers can go here
+            	 break;
+            }
+	         else {
+	            System.out.println("The second input is not an integer.");
+	            scanner.next();  // Consume the invalid input to prevent an infinite loop
+	        }
+	        
+    }
+        
         Square square = board.getSquare(guessRow, guessCol);
 
         // Check if the square has already been shot
@@ -58,8 +88,8 @@ public class Player{
             System.out.println("Hit! " + battleship.getSize() + "-unit battleship damaged.");
 
             if (battleship.isSunk()) {
-                System.out.println("You sunk a battleship! +1 point");
-                score++;
+            	score++;
+                System.out.println("You sunk a battleship! +1 point added, total point is = " + getScore() + " point");
             }
         } else {
             System.out.println("Miss! No battleship at this location.");
