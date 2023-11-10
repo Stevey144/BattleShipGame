@@ -1,4 +1,4 @@
-package continuedtest;
+package com.Battleship;
 
 import java.util.Random;
 import java.util.Scanner;

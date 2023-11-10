@@ -1,4 +1,4 @@
-package continuedtest;
+package com.Battleship;
 
 public class Square {
     private int row;

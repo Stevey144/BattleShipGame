@@ -1,4 +1,4 @@
-package continuedtest;
+package com.Battleship;
 
 public class LargeBattleship extends Battleship {
     static final int TOTAL_PERMISSIBLE_SHIPS = 1;
