@@ -67,9 +67,16 @@ public class Player{
 	            scanner.next();  // Consume the invalid input to prevent an infinite loop
 	        }
 	        
-    }
-        
-        Square square = board.getSquare(guessRow, guessCol);
+    } 
+        Square square = null;
+        try {
+        	  square = board.getSquare(guessRow, guessCol);   	
+        }
+        catch(ArrayIndexOutOfBoundsException e) {
+        	System.out.println(e.getMessage() + ": Hint row(0-9) column(0-9)");
+        	return;
+        }
+       
 
         // Check if the square has already been shot
         if (square.isShot()) {
